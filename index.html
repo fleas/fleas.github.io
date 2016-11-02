@@ -19,20 +19,20 @@ layout: default
   </ul>
   <ul class="post-list">
   <li><h3> Scan all network nodes </h3></li>
-  <li>nmap -sP 192.168.1.0/24; arp-scan --localnet  | grep "192.168.1.[0-9]* *ether"</li>
+  <li><pre>nmap -sP 192.168.1.0/24; arp-scan --localnet  | grep "192.168.1.[0-9]* *ether"</pre></li>
   <li><h3> Flush Memory Cache </h3></li>
-  <li>free && sync && echo 3 > /proc/sys/vm/drop_caches && free </li>
+  <li><pre> free && sync && echo 3 > /proc/sys/vm/drop_caches && free </pre></li>
   <li><h3> Update all pip packages outside virtualenv</h3></li>
-  <li> pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U </li>
+  <li> <pre> pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U </pre></li>
   <p> Install pip pkgs in current directory 
-  <li> pip install --prefix $PWD -I pip </li>
+  <li><pre> pip install --prefix $PWD -I pip </pre> </li>
   <li><h3> After installing above, below cmd will install pkgs in the new dir</h3></li> 
-  <li> PYTHONPATH=$PWD/lib/python*/site-packages ./bin/pip --version </li> </p>
+  <li><pre> PYTHONPATH=$PWD/lib/python*/site-packages ./bin/pip --version </pre></li> </p>
   <li>Generate Random Mac Address in Python</li>
   <li><pre>
        python -c "from itertools import imap; from random import randint; print ':'.join(['%02x'%x for x in imap(lambda x:randint(0,255), range(6))])" 
   </pre></li>
-  <li></li>
+  <li>More coming sooooooon!</li>
   </ul>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
