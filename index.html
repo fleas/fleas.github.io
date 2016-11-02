@@ -28,8 +28,10 @@ layout: default
   <li> pip install --prefix $PWD -I pip </li>
   <li><h3> After installing above, below cmd will install pkgs in the new dir</h3></li> 
   <li> PYTHONPATH=$PWD/lib/python*/site-packages ./bin/pip --version </li> </p>
-  <li></li>
-  <li></li>
+  <li>Generate Random Mac Address in Python</li>
+  <li><pre>
+       python -c "from itertools import imap; from random import randint; print ':'.join(['%02x'%x for x in imap(lambda x:randint(0,255), range(6))])" 
+  </pre></li>
   <li></li>
   </ul>
 
