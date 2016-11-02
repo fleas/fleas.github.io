@@ -17,6 +17,12 @@ layout: default
       </li>
     {% endfor %}
   </ul>
+  <ul class="post-list">
+  <li><h3> Scan all network nodes </h3></li>
+  <li>nmap -sP 192.168.1.0/24; arp-scan --localnet  | grep "192.168.1.[0-9]* *ether"</li>
+  <li><h3> Flush Memory Cache </h3></li>
+  <li>free && sync && echo 3 > /proc/sys/vm/drop_caches && free </li>
+  </ul>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
