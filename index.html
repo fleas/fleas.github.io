@@ -22,6 +22,15 @@ layout: default
   <li>nmap -sP 192.168.1.0/24; arp-scan --localnet  | grep "192.168.1.[0-9]* *ether"</li>
   <li><h3> Flush Memory Cache </h3></li>
   <li>free && sync && echo 3 > /proc/sys/vm/drop_caches && free </li>
+  <li><h3> Update all pip packages outside virtualenv</h3></li>
+  <li> pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U </li>
+  <p> Install pip pkgs in current directory 
+  <li> pip install --prefix $PWD -I pip </li>
+  <li><h3> After installing above, below cmd will install pkgs in the new dir</h3></li> 
+  <li> PYTHONPATH=$PWD/lib/python*/site-packages ./bin/pip --version </li> </p>
+  <li></li>
+  <li></li>
+  <li></li>
   </ul>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
